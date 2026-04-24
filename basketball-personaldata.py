@@ -7,10 +7,18 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="籃球專業紀錄台", layout="wide")
 
 # 1. 初始化資料結構
+# 1. 初始化資料結構 (專屬球隊名單鎖定版)
 if 'roster' not in st.session_state:
     st.session_state.roster = {
-        i: {"name": f"球員 {i+1}", "number": f"{i+1:02d}", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0}
-        for i in range(9)
+        0: {"name": "劉丞恩", "number": "03", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        1: {"name": "陳俊偉", "number": "11", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        2: {"name": "林栢逵", "number": "01", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        3: {"name": "詹侑歷", "number": "02", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        4: {"name": "黎冠邑", "number": "64", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        5: {"name": "謝顯佑", "number": "69", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        6: {"name": "羅棋仁", "number": "20", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        7: {"name": "蔡博鈞", "number": "21", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
+        8: {"name": "許師菩", "number": "19", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0},
     }
 if 'active_slots' not in st.session_state:
     st.session_state.active_slots = [0, 1, 2, 3, 4]
