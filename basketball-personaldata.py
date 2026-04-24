@@ -10,7 +10,7 @@ st.set_page_config(page_title="籃球專業紀錄台", layout="wide")
 if 'roster' not in st.session_state:
     st.session_state.roster = {
         i: {"name": f"球員 {i+1}", "number": f"{i+1:02d}", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0}
-        for i in range(12)
+        for i in range(9)
     }
 if 'active_slots' not in st.session_state:
     st.session_state.active_slots = [0, 1, 2, 3, 4]
@@ -120,7 +120,7 @@ with c3:
 st.divider()
 
 # --- 主畫面：橫式紀錄區 ---
-player_options = {i: f"#{st.session_state.roster[i]['number']} {st.session_state.roster[i]['name']}" for i in range(12)}
+player_options = {i: f"#{st.session_state.roster[i]['number']} {st.session_state.roster[i]['name']}" for i in range(9)}
 header_cols = st.columns([2.5, 2.5, 2.5, 2.5])
 header_cols[0].markdown("**場上球員 (點擊換人)**")
 header_cols[1].markdown("**得分 (Score)**")
@@ -155,7 +155,7 @@ st.divider()
 # --- 數據總表與匯出 ---
 st.subheader("📈 全隊數據總表")
 final_data = []
-for i in range(12):
+for i in range(9):
     row = st.session_state.roster[i]
     final_data.append({
         "背號": row["number"], "姓名": row["name"], 
