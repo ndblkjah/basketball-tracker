@@ -10,7 +10,7 @@ st.set_page_config(page_title="籃球專業紀錄台", layout="wide")
 if 'roster' not in st.session_state:
     st.session_state.roster = {
         i: {"name": f"球員 {i+1}", "number": f"{i+1:02d}", "score": 0, "rebounds": 0, "assists": 0, "seconds": 0}
-        for i in range(9)
+        for i in range(12)
     }
 if 'active_slots' not in st.session_state:
     st.session_state.active_slots = [0, 1, 2, 3, 4]
