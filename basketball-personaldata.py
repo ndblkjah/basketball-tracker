@@ -60,13 +60,13 @@ def handle_sub(slot_idx, new_p_id):
 # --- 側邊欄 ---
 with st.sidebar:
     st.header("👥 全隊名單設定")
-    for i in range(12):
+    for i in range(9):
         with st.expander(f"席位 {i+1}：{st.session_state.roster[i]['name']}"):
             st.session_state.roster[i]["name"] = st.text_input("姓名", value=st.session_state.roster[i]["name"], key=f"edit_n_{i}")
             st.session_state.roster[i]["number"] = st.text_input("背號", value=st.session_state.roster[i]["number"], key=f"edit_num_{i}")
     
     if st.button("🔄 全隊數據重置", type="primary"):
-        for i in range(12):
+        for i in range(9):
             st.session_state.roster[i].update({"score": 0, "rebounds": 0, "assists": 0, "seconds": 0})
         st.session_state.total_game_seconds = 0
         st.session_state.clock_running = False
